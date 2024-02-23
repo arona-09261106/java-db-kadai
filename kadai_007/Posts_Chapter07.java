@@ -59,13 +59,14 @@ public class Posts_Chapter07 {
 
 	            //　SQLクエリを実行（DBMSに送信）
 	            ResultSet result = statement.executeQuery(sql);
+	            System.out.println("ユーザーIDが1002のレコードを検出しました");
 
 	            // SQLクエリの実行結果を抽出
 	            while(result.next()) {
 	                Date at = result.getDate("posted_at");
 	                String post = result.getString("post_content");
 	                int like = result.getInt("likes");
-	                System.out.println("ユーザーIDが1002のレコードを検出しました");
+	                
 	                System.out.println(result.getRow() + "件目: 投稿日時＝" + at  
 	                                   + "／投稿内容=" + post + "／いいね数=" + like );
 	            }
